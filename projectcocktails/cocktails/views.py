@@ -1,9 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http.response import HttpResponse
 from django.http.response import JsonResponse
 from django.views import View
 from rest_framework import status
 
+from cocktails.forms import CocktailReceiptForm
 from cocktails.models import Cocktail
 from cocktails.serializers import CocktailSerializer
 from rest_framework.decorators import api_view
@@ -34,7 +35,16 @@ class CocktailsView(View):
         return HttpResponse(tutorials_serializer.data)
 
     def post(self, request):
-        raise NotImplementedError
+        form = CocktailReceiptForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.changed_data.get('image')
+            name = form.cleaned_data.get('name')
+            description = form.cleaned_data.get('description')
+            # ingredients = TODO when frontend
+
+            p = Cocktail.objects.create(name=name, description=description, image=image)
+            p.save()
+            return redirect('index')
 
     def delete(self, request):
         count = Cocktail.objects.all().delete()
@@ -48,11 +58,8 @@ class CocktailView(View):
         cocktail_serializer = CocktailSerializer(cocktail)
         return HttpResponse(json.dumps(cocktail_serializer.data))
 
-    def post(self, request):
-        raise NotImplementedError
-
     def delete(self, request, pk):
         cocktail = Cocktail.objects.get(pk=pk)
         cocktail.delete()
         return HttpResponse({'message': 'Tutorial was deleted successfully!'}, status=status.HTTP_204_NO_CONTENT)
-    
+
