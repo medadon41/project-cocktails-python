@@ -32,14 +32,13 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'cocktails.apps.CocktailsConfig',
+    'ingredients.apps.IngredientsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -75,10 +74,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'projectcocktails.wsgi.application'
 
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:27017',
-)
+CSRF_COOKIE_SECURE = False
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases

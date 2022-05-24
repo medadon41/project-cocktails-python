@@ -21,4 +21,5 @@ import cocktails
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('cocktails.urls')),
+    path('', include('ingredients.urls'))
 ]
