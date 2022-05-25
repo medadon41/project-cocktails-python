@@ -10,4 +10,4 @@ class CocktailReceiptForm(forms.ModelForm):
 
     class Meta:
         model = Cocktail
-        fields = ('image', 'name', 'ingredients')
+        fields = ('image', 'name', 'description', 'ingredients')
