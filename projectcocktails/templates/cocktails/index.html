@@ -3,5 +3,7 @@
 {% block title %}Index{% endblock %}
 
 {% block content %}
-<h1>hui pizda</h1>
+    {% for item in receipts %}
+        <h1>{{ item.name }}</h1>
+    {% endfor %}
 {% endblock %}
