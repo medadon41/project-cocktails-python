@@ -19,6 +19,7 @@ class CocktailReceiptForm(forms.ModelForm):
     ingredients = CustomMMCF(
         queryset=Ingredient.objects.all(),
         widget=forms.SelectMultiple(),
+        to_field_name="name"
     )
 
 

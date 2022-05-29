@@ -13,7 +13,6 @@ def index(request):
     if title is not None:
         tutorials = tutorials.filter(title__icontains=title).values()
 
-    print(tutorials)
     return render(request, 'cocktails/index.html')
 
 
@@ -31,7 +30,7 @@ class CocktailCreateView(View):
             receipt = form.save(commit=False)
             receipt.author = request.user
             receipt.save()
-            request.user.receipts.add(receipt)
+            #request.user.receipts.add(receipt)
             return redirect('index')
         context = {
             "form": form

@@ -18,9 +18,10 @@
                     </ul>
                     <ul class="navbar-nav mr-auto">
                         {% if user.is_authenticated %}
-                            <li class="nav-item">Hello, <a href="#"> {{ user.username }}</a>!</li>
+                            <li class="nav-link header-link">Hello, <a href="#"> {{ user.username }} </a></li>
+                            <li class="nav-item"><a href="/logout/" class="nav-link header-link">Logout</a></li>
                         {% else %}
-                        <button class="btn btn-outline-success" type="button" href="login/">Sign in</button>
+                            <a class="nav-link text-dark" href="/login/">Sign in</a>
                         {% endif %}
                     </ul>
                 </div>
