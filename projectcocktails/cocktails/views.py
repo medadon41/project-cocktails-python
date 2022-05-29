@@ -5,8 +5,6 @@ from django.views import View
 from cocktails.forms import CocktailReceiptForm
 from cocktails.models import Cocktail, Ingredient
 
-import json
-
 
 def index(request):
     tutorials = Cocktail.objects.all()
@@ -30,8 +28,10 @@ class CocktailCreateView(View):
     def post(self, request):
         form = CocktailReceiptForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            print('secs')
+            receipt = form.save(commit=False)
+            receipt.author = request.user
+            receipt.save()
+            request.user.receipts.add(receipt)
             return redirect('index')
         context = {
             "form": form

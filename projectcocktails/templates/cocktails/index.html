@@ -4,6 +4,11 @@
 
 {% block content %}
     {% for item in receipts %}
-        <h1>{{ item.name }}</h1>
+        <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="{{ item.image.url }}">
+            <div class="card-body">
+                {{ item.name }}
+            </div>
+        </div>
     {% endfor %}
 {% endblock %}

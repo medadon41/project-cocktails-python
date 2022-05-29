@@ -6,5 +6,5 @@ urlpatterns = [
     path('', views.index, name="index"),
     path('cocktails/', CocktailsView.as_view(http_method_names=['get'])),
     path('cocktails/create', CocktailCreateView.as_view(), name="create"),
-    path('cocktails/<int:pk>/', CocktailView.as_view()),
+    path('cocktails/<int:pk>/', CocktailView.as_view(http_method_names=['get'])),
 ]
