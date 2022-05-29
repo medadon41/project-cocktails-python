@@ -43,14 +43,40 @@ class CocktailsView(View):
     def get(self, request):
         receipts = Cocktail.objects.all()
 
+        others = Ingredient.objects.filter(category='OTH')
+        lactics = Ingredient.objects.filter(category='MLK')
+        fruits = Ingredient.objects.filter(category='FRT')
+        vegetables = Ingredient.objects.filter(category='VGT')
+        alcohol = Ingredient.objects.filter(category='ALC')
+        syrups = Ingredient.objects.filter(category='SRP')
+        juices = Ingredient.objects.filter(category='JCE')
+        water = Ingredient.objects.filter(category='WTR')
+
         context = {
             'receipts': receipts,
+            'others': others,
+            'lactics': lactics,
+            'fruits': fruits,
+            'vegetables': vegetables,
+            'alcohol': alcohol,
+            'syrups': syrups,
+            'juices': juices,
+            'water': water,
         }
         return render(request, 'cocktails/index.html', context)
 
     def delete(self, request):
         count = Cocktail.objects.all().delete()
         return HttpResponse({'message': '{} Cocktails were deleted successfully!'.format(count[0])})
+
+
+class FilteredCocktailsView(View):
+    def get(self, request, fltr):
+        cocktails = Cocktail.objects.filter(ingredients__name=fltr)
+        context = {
+            'receipts': cocktails
+        }
+        return render(request, 'cocktails/index.html', context)
 
 
 class CocktailView(View):
