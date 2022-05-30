@@ -18,7 +18,7 @@
                     </ul>
                     <ul class="navbar-nav mr-auto">
                         {% if user.is_authenticated %}
-                            <li class="nav-link header-link">Hello, <a href="#"> {{ user.username }} </a></li>
+                            <li class="nav-link header-link">Hello, <a href="/profile/{{ user.username }}"> {{ user.username }} </a></li>
                             <li class="nav-item"><a href="/logout/" class="nav-link header-link">Logout</a></li>
                         {% else %}
                             <a class="nav-link text-dark" href="/login/">Sign in</a>

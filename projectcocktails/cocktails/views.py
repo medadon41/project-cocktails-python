@@ -27,15 +27,37 @@ class CocktailCreateView(View):
     def post(self, request):
         form = CocktailReceiptForm(request.POST, request.FILES)
         if form.is_valid():
-            receipt = form.save(commit=False)
+            receipt = form.save()
             receipt.author = request.user
+            receipt.ingredients.set(form.cleaned_data.get('ingredients'))
             receipt.save()
-            #request.user.receipts.add(receipt)
+            request.user.receipts.add(receipt)
             return redirect('index')
         context = {
             "form": form
         }
         return render(request, 'cocktails/create.html', context)
+
+
+class CocktailUpdateView(View):
+    def get(self, request, pk):
+        receipt = Cocktail.objects.get(pk=pk)
+        form = CocktailReceiptForm(instance=receipt)
+        context = {
+            "form": form
+        }
+        return render(request, 'cocktails/edit.html', context)
+
+    def post(self, request, pk):
+        receipt = Cocktail.objects.get(pk=pk)
+        form = CocktailReceiptForm(request.POST, instance=receipt)
+        if form.is_valid():
+            receipt = form.save()
+            return redirect('index')
+        context = {
+            "form": form
+        }
+        return render(request, 'cocktails/edit.html', context)
 
 
 class CocktailsView(View):

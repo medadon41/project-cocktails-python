@@ -8,7 +8,7 @@
             <img class="mr-3 img-fluid col" src="{{ receipt.image.url }}">
             <div class="media-body col">
                 <h3 class="mt-0">{{ receipt.name }}</h3>
-                <p>by <a href="#">{{ receipt.author.username }}</a></p>
+                <p>by <a href="/profile/{{ receipt.author.username }}">{{ receipt.author.username }}</a></p>
                 <h5 class="mt-0">Ingredients:</h5>
                 <ul class="list-group list-group-flush">
                     {% for ingredient in receipt.ingredients.all %}
