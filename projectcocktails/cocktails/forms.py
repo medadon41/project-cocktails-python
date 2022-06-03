@@ -13,7 +13,7 @@ class CocktailReceiptForm(forms.ModelForm):
         model = Cocktail
         fields = ('image', 'name', 'description', 'ingredients')
 
-    image = forms.ImageField(required=True)
+    image = forms.ImageField(required=False)
     name = forms.CharField(widget=forms.TextInput(), required=True)
     description = forms.CharField(widget=forms.Textarea(), required=True)
     ingredients = CustomMMCF(

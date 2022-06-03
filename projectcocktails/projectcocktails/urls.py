@@ -11,5 +11,5 @@ urlpatterns = [
     path('', include('cauth.urls')),
     path('', include("django.contrib.auth.urls")),
     path('', include('cocktails.urls')),
-    path('', include('ingredients.urls')),
+    # path('', include('ingredients.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

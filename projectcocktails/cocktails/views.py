@@ -1,5 +1,7 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http.response import HttpResponse
+from django.utils.decorators import method_decorator
 from django.views import View
 
 from cocktails.forms import CocktailReceiptForm
@@ -32,7 +34,10 @@ class CocktailCreateView(View):
             receipt.ingredients.set(form.cleaned_data.get('ingredients'))
             receipt.save()
             request.user.receipts.add(receipt)
-            return redirect('index')
+            context = {
+                'receipt': receipt
+            }
+            return render(request, 'cocktails/receipt.html', context)
         context = {
             "form": form
         }
@@ -53,7 +58,10 @@ class CocktailUpdateView(View):
         form = CocktailReceiptForm(request.POST, instance=receipt)
         if form.is_valid():
             receipt = form.save()
-            return redirect('index')
+            context = {
+                'receipt': receipt
+            }
+            return render(request, 'cocktails/receipt.html', context)
         context = {
             "form": form
         }
@@ -61,6 +69,7 @@ class CocktailUpdateView(View):
 
 
 class CocktailsView(View):
+
     def get(self, request):
         receipts = Cocktail.objects.all()
 

@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.urls import path, include
 from cocktails import views
 from cocktails.views import CocktailsView, CocktailView, CocktailCreateView, CocktailUpdateView, FilteredCocktailsView
@@ -5,8 +6,8 @@ from cocktails.views import CocktailsView, CocktailView, CocktailCreateView, Coc
 urlpatterns = [
     path('', CocktailsView.as_view(http_method_names=['get']), name="index"),
     path('cocktails/', CocktailsView.as_view(http_method_names=['get'])),
-    path('cocktails/create', CocktailCreateView.as_view(), name="create"),
+    path('cocktails/create/', login_required(CocktailCreateView.as_view())),
     path('cocktails/<int:pk>/', CocktailView.as_view(http_method_names=['get'])),
-    path('cocktails/<int:pk>/edit', CocktailUpdateView.as_view()),
-    path('cocktails/<str:fltr>/', FilteredCocktailsView.as_view())
+    path('cocktails/<int:pk>/edit/', login_required(CocktailUpdateView.as_view())),
+    path('cocktails/<str:fltr>/', FilteredCocktailsView.as_view()),
 ]
