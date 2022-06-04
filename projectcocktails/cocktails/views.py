@@ -1,3 +1,6 @@
+import asyncio
+
+from asgiref.sync import sync_to_async
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.http.response import HttpResponse
@@ -7,15 +10,8 @@ from django.views import View
 from cocktails.forms import CocktailReceiptForm
 from cocktails.models import Cocktail, Ingredient
 
-
-def index(request):
-    tutorials = Cocktail.objects.all()
-
-    title = request.GET.get('title', None)
-    if title is not None:
-        tutorials = tutorials.filter(title__icontains=title).values()
-
-    return render(request, 'cocktails/index.html')
+import logging
+logger = logging.getLogger(__name__)
 
 
 class CocktailCreateView(View):
@@ -37,16 +33,18 @@ class CocktailCreateView(View):
             context = {
                 'receipt': receipt
             }
+            logger.info(f'Cocktail #{receipt.id} was created successfully!')
             return render(request, 'cocktails/receipt.html', context)
         context = {
             "form": form
         }
+        logger.error('Invalid form')
         return render(request, 'cocktails/create.html', context)
 
 
 class CocktailUpdateView(View):
     def get(self, request, pk):
-        receipt = Cocktail.objects.get(pk=pk)
+        receipt = asyncio.run(get_receipt_by_id_async(pk))
         form = CocktailReceiptForm(instance=receipt)
         context = {
             "form": form
@@ -61,26 +59,27 @@ class CocktailUpdateView(View):
             context = {
                 'receipt': receipt
             }
+            logger.info(f'Cocktail #{receipt.id} was updated successfully!')
             return render(request, 'cocktails/receipt.html', context)
         context = {
             "form": form
         }
+        logger.error('Invalid form')
         return render(request, 'cocktails/edit.html', context)
 
 
 class CocktailsView(View):
-
     def get(self, request):
-        receipts = Cocktail.objects.all()
+        receipts = asyncio.run(get_receipts_async())
 
-        others = Ingredient.objects.filter(category='OTH')
-        lactics = Ingredient.objects.filter(category='MLK')
-        fruits = Ingredient.objects.filter(category='FRT')
-        vegetables = Ingredient.objects.filter(category='VGT')
-        alcohol = Ingredient.objects.filter(category='ALC')
-        syrups = Ingredient.objects.filter(category='SRP')
-        juices = Ingredient.objects.filter(category='JCE')
-        water = Ingredient.objects.filter(category='WTR')
+        others = asyncio.run(get_ingredients_filtered_async('OTH'))
+        lactics = asyncio.run(get_ingredients_filtered_async('MLK'))
+        fruits = asyncio.run(get_ingredients_filtered_async('FRT'))
+        vegetables = asyncio.run(get_ingredients_filtered_async('VGT'))
+        alcohol = asyncio.run(get_ingredients_filtered_async('ALC'))
+        syrups = asyncio.run(get_ingredients_filtered_async('SRP'))
+        juices = asyncio.run(get_ingredients_filtered_async('JCE'))
+        water = asyncio.run(get_ingredients_filtered_async('WTR'))
 
         context = {
             'receipts': receipts,
@@ -95,14 +94,10 @@ class CocktailsView(View):
         }
         return render(request, 'cocktails/index.html', context)
 
-    def delete(self, request):
-        count = Cocktail.objects.all().delete()
-        return HttpResponse({'message': '{} Cocktails were deleted successfully!'.format(count[0])})
-
 
 class FilteredCocktailsView(View):
     def get(self, request, fltr):
-        cocktails = Cocktail.objects.filter(ingredients__name=fltr)
+        cocktails = asyncio.run(get_receipts_filtered_async(fltr))
         context = {
             'receipts': cocktails
         }
@@ -111,14 +106,37 @@ class FilteredCocktailsView(View):
 
 class CocktailView(View):
     def get(self, request, pk):
-        cocktail = Cocktail.objects.get(pk=pk)
+        cocktail = asyncio.run(get_receipt_by_id_async(pk))
         context = {
             'receipt': cocktail,
         }
         return render(request, 'cocktails/receipt.html', context)
 
     def delete(self, request, pk):
-        cocktail = Cocktail.objects.get(pk=pk)
+        cocktail = asyncio.run(get_receipt_by_id_async(pk))
         cocktail.delete()
         return HttpResponse({'message': 'Tutorial was deleted successfully!'})
 
+
+@sync_to_async
+def get_receipt_by_id_async(pk):
+    receipt = Cocktail.objects.get(pk=pk)
+    return receipt
+
+
+@sync_to_async
+def get_receipts_async(pk):
+    receipts = Cocktail.objects.all()
+    return receipts
+
+
+@sync_to_async
+def get_receipts_filtered_async(fltr):
+    receipts = Cocktail.objects.filter(category=fltr)
+    return receipts
+
+
+@sync_to_async
+def get_ingredients_filtered_async(fltr):
+    ingredients = Ingredient.objects.filter(ingredients__name=fltr)
+    return ingredients

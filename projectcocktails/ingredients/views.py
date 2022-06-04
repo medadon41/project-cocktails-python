@@ -8,6 +8,8 @@ from cocktails.models import Cocktail
 from ingredients.models import Ingredient
 from ingredients.serializers import IngredientSerializer
 
+# THE CODE BELOW IS NOT USED
+
 
 class IngredientsView(View):
     def get(self, request):

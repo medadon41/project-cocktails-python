@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import datetime
 from pathlib import Path
 import os
 import environ
@@ -159,3 +159,36 @@ cloudinary.config(
     api_key=env('CLOUDINARY_APIKEY'),
     api_secret=env('CLOUDINARY_APISECRET')
 )
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'base_format': {
+            'format': '{asctime} - {levelname}: {message}',
+            'style': '{',
+        }
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'base_format',
+        },
+        'info': {
+            'class': 'logging.FileHandler',
+            'formatter': 'base_format',
+            'filename': 'info-logs.log',
+        },
+        'error': {
+            'class': 'logging.FileHandler',
+            'formatter': 'base_format',
+            'filename': 'error-logs.log',
+        },
+    },
+    'loggers': {
+        'root': {
+            'handlers': ['info', 'error', 'console'],
+            'level': 1,
+        },
+    },
+}
