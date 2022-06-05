@@ -52,15 +52,12 @@ class CocktailUpdateView(View):
         return render(request, 'cocktails/edit.html', context)
 
     def post(self, request, pk):
-        receipt = Cocktail.objects.get(pk=pk)
-        form = CocktailReceiptForm(request.POST, instance=receipt)
+        receipt = asyncio.run(get_receipt_by_id_async(pk))
+        form = CocktailReceiptForm(request.POST, request.FILES, instance=receipt)
         if form.is_valid():
             receipt = form.save()
-            context = {
-                'receipt': receipt
-            }
             logger.info(f'Cocktail #{receipt.id} was updated successfully!')
-            return render(request, 'cocktails/receipt.html', context)
+            return redirect('index')
         context = {
             "form": form
         }
