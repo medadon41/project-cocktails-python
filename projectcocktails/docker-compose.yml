@@ -1,0 +1,31 @@
+version: '3.7'
+
+services:
+  web:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    environment:
+      DEBUG: 1
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
+
+  worker:
+    build: .
+    command: python manage.py rqworker default
+    environment:
+      DEBUG: 1
+    volumes:
+      - .:/app
+    depends_on:
+      - web
+
+  db:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
