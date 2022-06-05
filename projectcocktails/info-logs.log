@@ -2828,3 +2828,8 @@ params: (8,)
 2022-06-05 13:44:06,722 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
 2022-06-05 13:44:06,724 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
 2022-06-05 13:44:06,726 - DEBUG: MongoClient connection closed
+2022-06-05 14:50:39,269 - INFO: Watching for file changes with StatReloader
+2022-06-05 15:11:53,927 - INFO: /app/projectcocktails/settings.py changed, reloading.
+2022-06-05 15:11:54,830 - INFO: Watching for file changes with StatReloader
+2022-06-05 15:13:49,769 - INFO: /app/projectcocktails/settings.py changed, reloading.
+2022-06-05 15:13:50,676 - INFO: Watching for file changes with StatReloader
