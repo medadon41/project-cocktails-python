@@ -1,0 +1,110 @@
+{% extends 'cocktails/layout.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="btn-group">
+                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Vegetable
+                  </button>
+                  <div class="dropdown-menu">
+                      {% for ing in vegetables %}
+                            <a class="dropdown-item" href="/cocktails/{{ ing.name }}">{{ ing.name }}</a>
+                      {% endfor %}
+                  </div>
+        </div>
+        <div class="btn-group">
+                  <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Fruit
+                  </button>
+                  <div class="dropdown-menu">
+                    {% for ing in fruits %}
+                            <a class="dropdown-item" href="/cocktails/{{ ing.name }}">{{ ing.name }}</a>
+                      {% endfor %}
+                  </div>
+        </div>
+        <div class="btn-group">
+              <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Syrup
+              </button>
+              <div class="dropdown-menu">
+                {% for ing in syrups %}
+                            <a class="dropdown-item" href="/cocktails/{{ ing.name }}">{{ ing.name }}</a>
+                {% endfor %}
+              </div>
+        </div>
+        <div class="btn-group">
+                  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Juice
+                  </button>
+                  <div class="dropdown-menu">
+                    {% for ing in juices %}
+                            <a class="dropdown-item" href="/cocktails/{{ ing.name }}">{{ ing.name }}</a>
+                    {% endfor %}
+                  </div>
+        </div>
+        <div class="btn-group">
+                  <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Lactic
+                  </button>
+                  <div class="dropdown-menu">
+                    {% for ing in lactics %}
+                            <a class="dropdown-item" href="/cocktails/{{ ing.name }}">{{ ing.name }}</a>
+                    {% endfor %}
+                  </div>
+        </div>
+        <div class="btn-group">
+                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Water
+                  </button>
+                  <div class="dropdown-menu">
+                    {% for ing in water %}
+                            <a class="dropdown-item" href="/cocktails/{{ ing.name }}">{{ ing.name }}</a>
+                    {% endfor %}
+                  </div>
+        </div>
+        <div class="btn-group">
+                  <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Alcohol
+                  </button>
+                  <div class="dropdown-menu">
+                    {% for ing in alcohol %}
+                            <a class="dropdown-item" href="/cocktails/{{ ing.name }}">{{ ing.name }}</a>
+                      {% endfor %}
+                  </div>
+        </div>
+        <div class="btn-group">
+                  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Other
+                  </button>
+                  <div class="dropdown-menu">
+                    {% for ing in others %}
+                            <a class="dropdown-item" href="/cocktails/{{ ing.name }}">{{ ing.name }}</a>
+                      {% endfor %}
+                  </div>
+        </div>
+        <div class="row card-deck">
+            {% for item in receipts %}
+                <div class="card col" style="margin-top: 2%">
+                <img class="card-img-top img-fluid" src="{{ item.image.url }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ item.name }}</h5>
+                            <p class="card-text">>
+                                {% for ing in item.ingredients.all %}
+                                    <span class="badge badge-pill badge-light">{{ ing.name }}</span>
+                                {% endfor %}
+                            </p>
+                        <p class="card-text"><small class="text-muted">by {{ item.author.username }}</small></p>
+                        <a href="/cocktails/{{ item.id }}" class="btn btn-primary">Show full</a>
+                    </div>
+                </div>
+
+                {% if forloop.counter|divisibleby:3 %}
+                    </div>
+                <div class="row card-deck">
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

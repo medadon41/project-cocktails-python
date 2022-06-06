@@ -9,8 +9,18 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import datetime
 from pathlib import Path
+import os
+import dj_database_url
+import environ
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+env = environ.FileAwareEnv()
+
+environ.FileAwareEnv.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,26 +30,28 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-53q*sc_t56s-czm@1ed$^yh-r5@z8^cpenf4ddh6iqnezaq(5i'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'cocktails.apps.CocktailsConfig',
+    'apps.cocktails.apps.CocktailsConfig',
+    'apps.ingredients.apps.IngredientsConfig',
+    'apps.cauth.apps.AuthConfig',
+    'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'corsheaders',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -75,25 +87,24 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'projectcocktails.wsgi.application'
 
-CORS_ORIGIN_ALLOW_ALL = False
-CORS_ORIGIN_WHITELIST = (
-    'http://localhost:27017',
-)
-
+CSRF_COOKIE_SECURE = False
+CSRF_TRUSTED_ORIGINS = ['https://projectcocktails.herokuapp.com']
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+DATABASE_URL = 'postgresql://<postgresql>'
+DATABASES = {'default': dj_database_url.config('DATABASE_URL')}
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': 'project_db',
-        'CLIENT': {
-                'host': 'localhost',
-                'port': 27017,
-                'authSource': 'project_db',
-            },
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': env('DB_NAME'),
+#         'CLIENT': {
+#                 'host': 'localhost',
+#                 'port': 27017,
+#                 'authSource': 'project_db',
+#             },
+#     }
+# }
 
 
 # Password validation
@@ -132,7 +143,55 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+MEDIA_URL = 'media/'
+MEDIA_ROOT = 'media/'
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
+
+
+cloudinary.config(
+    cloud_name=env('CLOUDINARY_NAME'),
+    api_key=env('CLOUDINARY_APIKEY'),
+    api_secret=env('CLOUDINARY_APISECRET')
+)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'base_format': {
+            'format': '{asctime} - {levelname}: {message}',
+            'style': '{',
+        }
+    },
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'base_format',
+        },
+        'info': {
+            'class': 'logging.FileHandler',
+            'formatter': 'base_format',
+            'filename': 'info-logs.log',
+        },
+        'error': {
+            'class': 'logging.FileHandler',
+            'formatter': 'base_format',
+            'filename': 'error-logs.log',
+        },
+    },
+    'loggers': {
+        'root': {
+            'handlers': ['info', 'error', 'console'],
+            'level': 1,
+        },
+    },
+}

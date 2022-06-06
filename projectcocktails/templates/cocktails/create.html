@@ -1,0 +1,12 @@
+{% extends 'cocktails/layout.html' %}
+
+{% block title %}Create{% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <form method="post" enctype="multipart/form-data" class="form-group">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create</button>
+    </form>
+{% endblock %}

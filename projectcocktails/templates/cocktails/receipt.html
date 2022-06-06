@@ -1,0 +1,24 @@
+{% extends 'cocktails/layout.html' %}
+
+{% block title %}{{ receipt.name }}{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="media row">
+            <img class="mr-3 img-fluid col" src="{{ receipt.image.url }}">
+            <div class="media-body col">
+                <h3 class="mt-0">{{ receipt.name }}</h3>
+                <p>by <a href="/profile/{{ receipt.author.username }}">{{ receipt.author.username }}</a></p>
+                <h5 class="mt-0">Ingredients:</h5>
+                <ul class="list-group list-group-flush">
+                    {% for ingredient in receipt.ingredients.all %}
+                        <li class="list-group-item">{{ ingredient.name }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <p class="col">{{ receipt.description }}</p>
+        </div>
+    </div>
+{% endblock %}
