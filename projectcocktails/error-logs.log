@@ -2825,3 +2825,458 @@ params: (8,)
 2022-06-05 15:11:54,830 - INFO: Watching for file changes with StatReloader
 2022-06-05 15:13:49,769 - INFO: /app/projectcocktails/settings.py changed, reloading.
 2022-06-05 15:13:50,676 - INFO: Watching for file changes with StatReloader
+2022-06-07 00:06:10,652 - INFO: Watching for file changes with StatReloader
+2022-06-07 00:06:12,410 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:06:12,414 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:06:12,416 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:06:12,417 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:06:12,419 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:06:12,421 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:06:12,423 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:06:12,424 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:06:12,426 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:06:12,455 - ERROR: Internal Server Error: /
+Traceback (most recent call last):
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\sessions\backends\base.py", line 187, in _get_session
+    return self._session_cache
+AttributeError: 'SessionStore' object has no attribute '_session_cache'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\mddn\PycharmProjects\project-cocktails-python\projectcocktails\apps\cocktails\views.py", line 92, in get
+    return render(request, 'cocktails/index.html', context)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 958, in render_annotated
+    return self.render(context)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 958, in render_annotated
+    return self.render(context)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 315, in render
+    match = condition.eval(context)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\defaulttags.py", line 878, in eval
+    return self.value.resolve(context, ignore_failures=True)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 712, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 842, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\template\base.py", line 875, in _resolve_lookup
+    current = current[bit]
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\functional.py", line 258, in inner
+    self._setup()
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\utils\functional.py", line 398, in _setup
+    self._wrapped = self._setupfunc()
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\middleware.py", line 25, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\middleware.py", line 11, in get_user
+    request._cached_user = auth.get_user(request)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\__init__.py", line 191, in get_user
+    user_id = _get_user_session_key(request)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\auth\__init__.py", line 60, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\sessions\backends\base.py", line 53, in __getitem__
+    return self._session[key]
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\sessions\backends\base.py", line 192, in _get_session
+    self._session_cache = self.load()
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\sessions\backends\db.py", line 42, in load
+    s = self._get_session_from_db()
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\contrib\sessions\backends\db.py", line 32, in _get_session_from_db
+    return self.model.objects.get(
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 492, in get
+    num = len(clone)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 302, in __len__
+    self._fetch_all()
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 1348, in execute_sql
+    sql, params = self.as_sql()
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 573, in as_sql
+    extra_select, order_by, group_by = self.pre_sql_setup()
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 64, in pre_sql_setup
+    self.setup_query()
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 55, in setup_query
+    self.select, self.klass_info, self.annotation_col_map = self.get_select()
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 284, in get_select
+    sql, params = self.compile(col)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 496, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\expressions.py", line 948, in as_sql
+    sql = ".".join(map(compiler.quote_name_unless_alias, identifiers))
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\compiler.py", line 487, in quote_name_unless_alias
+    r = self.connection.ops.quote_name(name)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\backends\dummy\base.py", line 20, in complain
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: settings.DATABASES is improperly configured. Please supply the ENGINE value. Check settings documentation for more details.
+2022-06-07 00:06:13,089 - WARNING: Not Found: /favicon.ico
+2022-06-07 00:07:30,435 - INFO: C:\Users\mddn\PycharmProjects\project-cocktails-python\projectcocktails\projectcocktails\settings.py changed, reloading.
+2022-06-07 00:07:31,327 - INFO: Watching for file changes with StatReloader
+2022-06-07 00:07:31,447 - DEBUG: New MongoClient connection
+2022-06-07 00:07:31,536 - DEBUG: New Database connection
+2022-06-07 00:07:31,559 - DEBUG: sql_command: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+params: ()
+2022-06-07 00:07:31,561 - DEBUG: Find query: {'projection': ['id', 'app', 'name', 'applied']}
+2022-06-07 00:07:31,564 - DEBUG: Result: (1, 'contenttypes', '0001_initial', datetime.datetime(2022, 5, 17, 10, 39, 37, 797000))
+2022-06-07 00:07:31,564 - DEBUG: Result: (2, 'auth', '0001_initial', datetime.datetime(2022, 5, 17, 10, 39, 38, 201000))
+2022-06-07 00:07:31,565 - DEBUG: Result: (3, 'admin', '0001_initial', datetime.datetime(2022, 5, 17, 10, 39, 38, 289000))
+2022-06-07 00:07:31,565 - DEBUG: Result: (4, 'admin', '0002_logentry_remove_auto_add', datetime.datetime(2022, 5, 17, 10, 39, 38, 308000))
+2022-06-07 00:07:31,566 - DEBUG: Result: (5, 'admin', '0003_logentry_add_action_flag_choices', datetime.datetime(2022, 5, 17, 10, 39, 38, 329000))
+2022-06-07 00:07:31,566 - DEBUG: Result: (6, 'contenttypes', '0002_remove_content_type_name', datetime.datetime(2022, 5, 17, 10, 39, 38, 523000))
+2022-06-07 00:07:31,566 - DEBUG: Result: (7, 'auth', '0002_alter_permission_name_max_length', datetime.datetime(2022, 5, 17, 10, 39, 38, 548000))
+2022-06-07 00:07:31,567 - DEBUG: Result: (8, 'auth', '0003_alter_user_email_max_length', datetime.datetime(2022, 5, 17, 10, 39, 38, 572000))
+2022-06-07 00:07:31,567 - DEBUG: Result: (9, 'auth', '0004_alter_user_username_opts', datetime.datetime(2022, 5, 17, 10, 39, 38, 595000))
+2022-06-07 00:07:31,568 - DEBUG: Result: (10, 'auth', '0005_alter_user_last_login_null', datetime.datetime(2022, 5, 17, 10, 39, 38, 613000))
+2022-06-07 00:07:31,568 - DEBUG: Result: (11, 'auth', '0006_require_contenttypes_0002', datetime.datetime(2022, 5, 17, 10, 39, 38, 623000))
+2022-06-07 00:07:31,569 - DEBUG: Result: (12, 'auth', '0007_alter_validators_add_error_messages', datetime.datetime(2022, 5, 17, 10, 39, 38, 644000))
+2022-06-07 00:07:31,569 - DEBUG: Result: (13, 'auth', '0008_alter_user_username_max_length', datetime.datetime(2022, 5, 17, 10, 39, 38, 666000))
+2022-06-07 00:07:31,570 - DEBUG: Result: (14, 'auth', '0009_alter_user_last_name_max_length', datetime.datetime(2022, 5, 17, 10, 39, 38, 692000))
+2022-06-07 00:07:31,570 - DEBUG: Result: (15, 'auth', '0010_alter_group_name_max_length', datetime.datetime(2022, 5, 17, 10, 39, 38, 718000))
+2022-06-07 00:07:31,570 - DEBUG: Result: (16, 'auth', '0011_update_proxy_permissions', datetime.datetime(2022, 5, 17, 10, 39, 38, 742000))
+2022-06-07 00:07:31,571 - DEBUG: Result: (17, 'auth', '0012_alter_user_first_name_max_length', datetime.datetime(2022, 5, 17, 10, 39, 38, 762000))
+2022-06-07 00:07:31,571 - DEBUG: Result: (18, 'cocktails', '0001_initial', datetime.datetime(2022, 5, 17, 10, 39, 38, 853000))
+2022-06-07 00:07:31,572 - DEBUG: Result: (19, 'sessions', '0001_initial', datetime.datetime(2022, 5, 17, 10, 39, 38, 903000))
+2022-06-07 00:07:31,572 - DEBUG: Result: (20, 'cocktails', '0002_remove_ingredient_description_ingredient_category_and_more', datetime.datetime(2022, 5, 18, 20, 14, 7, 805000))
+2022-06-07 00:07:31,572 - DEBUG: Result: (21, 'cocktails', '0003_delete_ingredient', datetime.datetime(2022, 5, 27, 21, 48, 55, 974000))
+2022-06-07 00:07:31,573 - DEBUG: Result: (22, 'ingredients', '0001_initial', datetime.datetime(2022, 5, 27, 21, 48, 56, 19000))
+2022-06-07 00:07:31,573 - DEBUG: Result: (23, 'ingredients', '0002_remove_ingredient_cocktail', datetime.datetime(2022, 5, 27, 21, 48, 56, 27000))
+2022-06-07 00:07:31,573 - DEBUG: Result: (24, 'cocktails', '0004_cocktail_image_cocktail_ingredients', datetime.datetime(2022, 5, 27, 21, 48, 56, 82000))
+2022-06-07 00:07:31,574 - DEBUG: Result: (25, 'ingredients', '0003_alter_ingredient_id', datetime.datetime(2022, 5, 27, 21, 48, 56, 88000))
+2022-06-07 00:07:31,574 - DEBUG: Result: (26, 'ingredients', '0002_alter_ingredient_id', datetime.datetime(2022, 5, 27, 22, 37, 26, 115000))
+2022-06-07 00:07:31,575 - DEBUG: Result: (27, 'cocktails', '0002_remove_cocktail_published_cocktail_author', datetime.datetime(2022, 5, 29, 11, 14, 2, 649000))
+2022-06-07 00:07:31,575 - DEBUG: Result: (28, 'cocktails', '0003_alter_cocktail_author', datetime.datetime(2022, 5, 29, 11, 28, 24, 555000))
+2022-06-07 00:07:31,575 - DEBUG: Result: (29, 'cocktails', '0004_alter_cocktail_image', datetime.datetime(2022, 5, 29, 12, 45, 58, 181000))
+2022-06-07 00:07:31,576 - DEBUG: Result: (30, 'cocktails', '0005_alter_cocktail_description', datetime.datetime(2022, 5, 29, 13, 9, 34, 801000))
+2022-06-07 00:07:31,576 - DEBUG: Result: (31, 'cauth', '0001_initial', datetime.datetime(2022, 5, 29, 19, 34, 13, 510000))
+2022-06-07 00:07:31,577 - DEBUG: Result: (32, 'cocktails', '0006_alter_cocktail_image', datetime.datetime(2022, 6, 3, 21, 7, 25, 23000))
+2022-06-07 00:07:32,467 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:07:32,469 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:07:32,471 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:07:32,473 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:07:32,475 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:07:32,476 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:07:32,479 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:07:32,480 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:07:32,482 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:07:32,490 - DEBUG: New Database connection
+2022-06-07 00:07:32,491 - DEBUG: sql_command: SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > %(0)s AND "django_session"."session_key" = %(1)s) LIMIT 21
+params: (datetime.datetime(2022, 6, 6, 21, 7, 32, 489771), 'mvfvzthj8szyz29frlgu5b3d1bmiqk9g')
+2022-06-07 00:07:32,493 - DEBUG: Find query: {'filter': {'$and': [{'expire_date': {'$gt': datetime.datetime(2022, 6, 6, 21, 7, 32, 489771)}}, {'session_key': {'$eq': 'mvfvzthj8szyz29frlgu5b3d1bmiqk9g'}}]}, 'projection': ['session_key', 'session_data', 'expire_date'], 'limit': 21}
+2022-06-07 00:07:32,497 - DEBUG: Result: ('mvfvzthj8szyz29frlgu5b3d1bmiqk9g', '.eJxVjDsOwjAQBe_iGllrE_8o6XMGy_bu4gBypDipEHeHSCmgfTPzXiKmba1x67TECcVFeHH63XIqD2o7wHtqt1mWua3LlOWuyIN2Oc5Iz-vh_h3U1Ou3ZgdsDZqESrEyCgaNZxeS1mAU0gCWtAdmKsQB0bnAZG1Gn9EZyE68P-L8OEA:1nxOjD:6q1XCUOjjiXwnQCxt3Pd9xah7fxSpIGZDg2yrzPSDJg', datetime.datetime(2022, 6, 18, 8, 1, 47, 10000))
+2022-06-07 00:07:32,499 - DEBUG: sql_command: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %(0)s LIMIT 21
+params: (8,)
+2022-06-07 00:07:32,502 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
+2022-06-07 00:07:32,505 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
+2022-06-07 00:07:32,506 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" WHERE "ingredients_ingredient"."category" = %(0)s
+params: ('VGT',)
+2022-06-07 00:07:32,507 - DEBUG: Find query: {'filter': {'category': {'$eq': 'VGT'}}, 'projection': ['id', 'name', 'category']}
+2022-06-07 00:07:32,510 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" WHERE "ingredients_ingredient"."category" = %(0)s
+params: ('FRT',)
+2022-06-07 00:07:32,511 - DEBUG: Find query: {'filter': {'category': {'$eq': 'FRT'}}, 'projection': ['id', 'name', 'category']}
+2022-06-07 00:07:32,513 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" WHERE "ingredients_ingredient"."category" = %(0)s
+params: ('SRP',)
+2022-06-07 00:07:32,514 - DEBUG: Find query: {'filter': {'category': {'$eq': 'SRP'}}, 'projection': ['id', 'name', 'category']}
+2022-06-07 00:07:32,517 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" WHERE "ingredients_ingredient"."category" = %(0)s
+params: ('JCE',)
+2022-06-07 00:07:32,519 - DEBUG: Find query: {'filter': {'category': {'$eq': 'JCE'}}, 'projection': ['id', 'name', 'category']}
+2022-06-07 00:07:32,520 - DEBUG: Result: (UUID('35b71719-727a-4cb6-9e07-bf283f4e7031'), 'Orange juice', 'JCE')
+2022-06-07 00:07:32,521 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" WHERE "ingredients_ingredient"."category" = %(0)s
+params: ('MLK',)
+2022-06-07 00:07:32,523 - DEBUG: Find query: {'filter': {'category': {'$eq': 'MLK'}}, 'projection': ['id', 'name', 'category']}
+2022-06-07 00:07:32,524 - DEBUG: Result: (UUID('2f42995b-03a6-43e5-863d-7ab72327ab9a'), 'Milk', 'MLK')
+2022-06-07 00:07:32,525 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" WHERE "ingredients_ingredient"."category" = %(0)s
+params: ('WTR',)
+2022-06-07 00:07:32,527 - DEBUG: Find query: {'filter': {'category': {'$eq': 'WTR'}}, 'projection': ['id', 'name', 'category']}
+2022-06-07 00:07:32,528 - DEBUG: Result: (UUID('428c65e2-5964-4014-a4ce-1a61d7472018'), 'wtr', 'WTR')
+2022-06-07 00:07:32,530 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" WHERE "ingredients_ingredient"."category" = %(0)s
+params: ('ALC',)
+2022-06-07 00:07:32,532 - DEBUG: Find query: {'filter': {'category': {'$eq': 'ALC'}}, 'projection': ['id', 'name', 'category']}
+2022-06-07 00:07:32,534 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" WHERE "ingredients_ingredient"."category" = %(0)s
+params: ('OTH',)
+2022-06-07 00:07:32,536 - DEBUG: Find query: {'filter': {'category': {'$eq': 'OTH'}}, 'projection': ['id', 'name', 'category']}
+2022-06-07 00:07:32,538 - DEBUG: sql_command: SELECT "cocktails_cocktail"."id", "cocktails_cocktail"."author_id", "cocktails_cocktail"."name", "cocktails_cocktail"."description", "cocktails_cocktail"."image" FROM "cocktails_cocktail"
+params: ()
+2022-06-07 00:07:32,539 - DEBUG: Find query: {'projection': ['id', 'author_id', 'name', 'description', 'image']}
+2022-06-07 00:07:32,542 - DEBUG: Result: (56, 8, 'tf2', 'tf2', 'image/upload/v1654290733/3c0cc53efa66b1e78c8e2dea41c8b65b_b2e5gp.png')
+2022-06-07 00:07:32,542 - DEBUG: Result: (57, 8, 'mmmmm', 'aaa', 'image/upload/v1654290763/canny_c4jopa.png')
+2022-06-07 00:07:32,543 - DEBUG: Result: (58, 8, 'ogo tf2', 'aa', 'image/upload/v1654290787/3c0cc53efa66b1e78c8e2dea41c8b65b_fup6kl.png')
+2022-06-07 00:07:32,543 - DEBUG: Result: (59, 8, 'asdfsd', 'dfdfdfdfdfdfdfdfdfdf', 'image/upload/v1654355965/3c0cc53efa66b1e78c8e2dea41c8b65b_r6vp3w.png')
+2022-06-07 00:07:32,544 - DEBUG: Result: (60, 8, 'aaaa', 'dasdas', 'image/upload/v1654356055/aXS145dT5yI_vnkcqm.jpg')
+2022-06-07 00:07:32,544 - DEBUG: Result: (61, 8, 'regerg', 'wwww', 'image/upload/v1654356303/6i-U42XoPQg_yqhhyp.jpg')
+2022-06-07 00:07:32,544 - DEBUG: Result: (62, 8, 'onetwoaaaaaa', 'asd', 'image/upload/v1654425845/4_jrzgpa.png')
+2022-06-07 00:07:32,546 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" INNER JOIN "cocktails_cocktail_ingredients" ON ("ingredients_ingredient"."id" = "cocktails_cocktail_ingredients"."ingredient_id") WHERE "cocktails_cocktail_ingredients"."cocktail_id" = %(0)s
+params: (56,)
+2022-06-07 00:07:32,552 - DEBUG: Aggregation query: [{'$match': {'id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'cocktails_cocktail_ingredients', 'localField': 'id', 'foreignField': 'ingredient_id', 'as': 'cocktails_cocktail_ingredients'}}, {'$unwind': '$cocktails_cocktail_ingredients'}, {'$match': {'cocktails_cocktail_ingredients.cocktail_id': {'$eq': 56}}}, {'$project': {'id': True, 'name': True, 'category': True}}]
+2022-06-07 00:07:32,552 - DEBUG: Result: (UUID('35b71719-727a-4cb6-9e07-bf283f4e7031'), 'Orange juice', 'JCE')
+2022-06-07 00:07:32,553 - DEBUG: Result: (UUID('2f42995b-03a6-43e5-863d-7ab72327ab9a'), 'Milk', 'MLK')
+2022-06-07 00:07:32,553 - DEBUG: sql_command: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %(0)s LIMIT 21
+params: (8,)
+2022-06-07 00:07:32,560 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
+2022-06-07 00:07:32,562 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
+2022-06-07 00:07:32,566 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" INNER JOIN "cocktails_cocktail_ingredients" ON ("ingredients_ingredient"."id" = "cocktails_cocktail_ingredients"."ingredient_id") WHERE "cocktails_cocktail_ingredients"."cocktail_id" = %(0)s
+params: (57,)
+2022-06-07 00:07:32,570 - DEBUG: Aggregation query: [{'$match': {'id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'cocktails_cocktail_ingredients', 'localField': 'id', 'foreignField': 'ingredient_id', 'as': 'cocktails_cocktail_ingredients'}}, {'$unwind': '$cocktails_cocktail_ingredients'}, {'$match': {'cocktails_cocktail_ingredients.cocktail_id': {'$eq': 57}}}, {'$project': {'id': True, 'name': True, 'category': True}}]
+2022-06-07 00:07:32,570 - DEBUG: Result: (UUID('428c65e2-5964-4014-a4ce-1a61d7472018'), 'wtr', 'WTR')
+2022-06-07 00:07:32,571 - DEBUG: sql_command: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %(0)s LIMIT 21
+params: (8,)
+2022-06-07 00:07:32,574 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
+2022-06-07 00:07:32,576 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
+2022-06-07 00:07:32,577 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" INNER JOIN "cocktails_cocktail_ingredients" ON ("ingredients_ingredient"."id" = "cocktails_cocktail_ingredients"."ingredient_id") WHERE "cocktails_cocktail_ingredients"."cocktail_id" = %(0)s
+params: (58,)
+2022-06-07 00:07:32,581 - DEBUG: Aggregation query: [{'$match': {'id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'cocktails_cocktail_ingredients', 'localField': 'id', 'foreignField': 'ingredient_id', 'as': 'cocktails_cocktail_ingredients'}}, {'$unwind': '$cocktails_cocktail_ingredients'}, {'$match': {'cocktails_cocktail_ingredients.cocktail_id': {'$eq': 58}}}, {'$project': {'id': True, 'name': True, 'category': True}}]
+2022-06-07 00:07:32,581 - DEBUG: Result: (UUID('35b71719-727a-4cb6-9e07-bf283f4e7031'), 'Orange juice', 'JCE')
+2022-06-07 00:07:32,583 - DEBUG: sql_command: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %(0)s LIMIT 21
+params: (8,)
+2022-06-07 00:07:32,586 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
+2022-06-07 00:07:32,587 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
+2022-06-07 00:07:32,588 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" INNER JOIN "cocktails_cocktail_ingredients" ON ("ingredients_ingredient"."id" = "cocktails_cocktail_ingredients"."ingredient_id") WHERE "cocktails_cocktail_ingredients"."cocktail_id" = %(0)s
+params: (59,)
+2022-06-07 00:07:32,592 - DEBUG: Aggregation query: [{'$match': {'id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'cocktails_cocktail_ingredients', 'localField': 'id', 'foreignField': 'ingredient_id', 'as': 'cocktails_cocktail_ingredients'}}, {'$unwind': '$cocktails_cocktail_ingredients'}, {'$match': {'cocktails_cocktail_ingredients.cocktail_id': {'$eq': 59}}}, {'$project': {'id': True, 'name': True, 'category': True}}]
+2022-06-07 00:07:32,592 - DEBUG: Result: (UUID('35b71719-727a-4cb6-9e07-bf283f4e7031'), 'Orange juice', 'JCE')
+2022-06-07 00:07:32,593 - DEBUG: sql_command: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %(0)s LIMIT 21
+params: (8,)
+2022-06-07 00:07:32,596 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
+2022-06-07 00:07:32,598 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
+2022-06-07 00:07:32,599 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" INNER JOIN "cocktails_cocktail_ingredients" ON ("ingredients_ingredient"."id" = "cocktails_cocktail_ingredients"."ingredient_id") WHERE "cocktails_cocktail_ingredients"."cocktail_id" = %(0)s
+params: (60,)
+2022-06-07 00:07:32,602 - DEBUG: Aggregation query: [{'$match': {'id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'cocktails_cocktail_ingredients', 'localField': 'id', 'foreignField': 'ingredient_id', 'as': 'cocktails_cocktail_ingredients'}}, {'$unwind': '$cocktails_cocktail_ingredients'}, {'$match': {'cocktails_cocktail_ingredients.cocktail_id': {'$eq': 60}}}, {'$project': {'id': True, 'name': True, 'category': True}}]
+2022-06-07 00:07:32,603 - DEBUG: Result: (UUID('35b71719-727a-4cb6-9e07-bf283f4e7031'), 'Orange juice', 'JCE')
+2022-06-07 00:07:32,604 - DEBUG: sql_command: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %(0)s LIMIT 21
+params: (8,)
+2022-06-07 00:07:32,607 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
+2022-06-07 00:07:32,609 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
+2022-06-07 00:07:32,611 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" INNER JOIN "cocktails_cocktail_ingredients" ON ("ingredients_ingredient"."id" = "cocktails_cocktail_ingredients"."ingredient_id") WHERE "cocktails_cocktail_ingredients"."cocktail_id" = %(0)s
+params: (61,)
+2022-06-07 00:07:32,614 - DEBUG: Aggregation query: [{'$match': {'id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'cocktails_cocktail_ingredients', 'localField': 'id', 'foreignField': 'ingredient_id', 'as': 'cocktails_cocktail_ingredients'}}, {'$unwind': '$cocktails_cocktail_ingredients'}, {'$match': {'cocktails_cocktail_ingredients.cocktail_id': {'$eq': 61}}}, {'$project': {'id': True, 'name': True, 'category': True}}]
+2022-06-07 00:07:32,615 - DEBUG: Result: (UUID('428c65e2-5964-4014-a4ce-1a61d7472018'), 'wtr', 'WTR')
+2022-06-07 00:07:32,616 - DEBUG: sql_command: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %(0)s LIMIT 21
+params: (8,)
+2022-06-07 00:07:32,619 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
+2022-06-07 00:07:32,620 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
+2022-06-07 00:07:32,623 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" INNER JOIN "cocktails_cocktail_ingredients" ON ("ingredients_ingredient"."id" = "cocktails_cocktail_ingredients"."ingredient_id") WHERE "cocktails_cocktail_ingredients"."cocktail_id" = %(0)s
+params: (62,)
+2022-06-07 00:07:32,627 - DEBUG: Aggregation query: [{'$match': {'id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'cocktails_cocktail_ingredients', 'localField': 'id', 'foreignField': 'ingredient_id', 'as': 'cocktails_cocktail_ingredients'}}, {'$unwind': '$cocktails_cocktail_ingredients'}, {'$match': {'cocktails_cocktail_ingredients.cocktail_id': {'$eq': 62}}}, {'$project': {'id': True, 'name': True, 'category': True}}]
+2022-06-07 00:07:32,627 - DEBUG: Result: (UUID('2f42995b-03a6-43e5-863d-7ab72327ab9a'), 'Milk', 'MLK')
+2022-06-07 00:07:32,629 - DEBUG: sql_command: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %(0)s LIMIT 21
+params: (8,)
+2022-06-07 00:07:32,632 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
+2022-06-07 00:07:32,633 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
+2022-06-07 00:07:32,636 - DEBUG: MongoClient connection closed
+2022-06-07 00:07:33,058 - WARNING: Not Found: /favicon.ico
+2022-06-07 00:07:38,252 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:07:38,309 - DEBUG: New Database connection
+2022-06-07 00:07:38,310 - DEBUG: sql_command: SELECT "cocktails_cocktail"."id", "cocktails_cocktail"."author_id", "cocktails_cocktail"."name", "cocktails_cocktail"."description", "cocktails_cocktail"."image" FROM "cocktails_cocktail" LIMIT 21
+params: ()
+2022-06-07 00:07:38,312 - DEBUG: Find query: {'projection': ['id', 'author_id', 'name', 'description', 'image'], 'limit': 21}
+2022-06-07 00:07:38,344 - DEBUG: Result: (56, 8, 'tf2', 'tf2', 'image/upload/v1654290733/3c0cc53efa66b1e78c8e2dea41c8b65b_b2e5gp.png')
+2022-06-07 00:07:38,345 - DEBUG: Result: (57, 8, 'mmmmm', 'aaa', 'image/upload/v1654290763/canny_c4jopa.png')
+2022-06-07 00:07:38,345 - DEBUG: Result: (58, 8, 'ogo tf2', 'aa', 'image/upload/v1654290787/3c0cc53efa66b1e78c8e2dea41c8b65b_fup6kl.png')
+2022-06-07 00:07:38,346 - DEBUG: Result: (59, 8, 'asdfsd', 'dfdfdfdfdfdfdfdfdfdf', 'image/upload/v1654355965/3c0cc53efa66b1e78c8e2dea41c8b65b_r6vp3w.png')
+2022-06-07 00:07:38,346 - DEBUG: Result: (60, 8, 'aaaa', 'dasdas', 'image/upload/v1654356055/aXS145dT5yI_vnkcqm.jpg')
+2022-06-07 00:07:38,347 - DEBUG: Result: (61, 8, 'regerg', 'wwww', 'image/upload/v1654356303/6i-U42XoPQg_yqhhyp.jpg')
+2022-06-07 00:07:38,347 - DEBUG: Result: (62, 8, 'onetwoaaaaaa', 'asd', 'image/upload/v1654425845/4_jrzgpa.png')
+2022-06-07 00:07:38,348 - DEBUG: sql_command: SELECT "cocktails_cocktail"."id", "cocktails_cocktail"."author_id", "cocktails_cocktail"."name", "cocktails_cocktail"."description", "cocktails_cocktail"."image" FROM "cocktails_cocktail" LIMIT 21
+params: ()
+2022-06-07 00:07:38,350 - DEBUG: Find query: {'projection': ['id', 'author_id', 'name', 'description', 'image'], 'limit': 21}
+2022-06-07 00:07:38,351 - DEBUG: Result: (56, 8, 'tf2', 'tf2', 'image/upload/v1654290733/3c0cc53efa66b1e78c8e2dea41c8b65b_b2e5gp.png')
+2022-06-07 00:07:38,351 - DEBUG: Result: (57, 8, 'mmmmm', 'aaa', 'image/upload/v1654290763/canny_c4jopa.png')
+2022-06-07 00:07:38,352 - DEBUG: Result: (58, 8, 'ogo tf2', 'aa', 'image/upload/v1654290787/3c0cc53efa66b1e78c8e2dea41c8b65b_fup6kl.png')
+2022-06-07 00:07:38,352 - DEBUG: Result: (59, 8, 'asdfsd', 'dfdfdfdfdfdfdfdfdfdf', 'image/upload/v1654355965/3c0cc53efa66b1e78c8e2dea41c8b65b_r6vp3w.png')
+2022-06-07 00:07:38,352 - DEBUG: Result: (60, 8, 'aaaa', 'dasdas', 'image/upload/v1654356055/aXS145dT5yI_vnkcqm.jpg')
+2022-06-07 00:07:38,353 - DEBUG: Result: (61, 8, 'regerg', 'wwww', 'image/upload/v1654356303/6i-U42XoPQg_yqhhyp.jpg')
+2022-06-07 00:07:38,353 - DEBUG: Result: (62, 8, 'onetwoaaaaaa', 'asd', 'image/upload/v1654425845/4_jrzgpa.png')
+2022-06-07 00:07:38,354 - DEBUG: sql_command: SELECT "cocktails_cocktail"."id", "cocktails_cocktail"."author_id", "cocktails_cocktail"."name", "cocktails_cocktail"."description", "cocktails_cocktail"."image" FROM "cocktails_cocktail" LIMIT 21
+params: ()
+2022-06-07 00:07:38,355 - DEBUG: Find query: {'projection': ['id', 'author_id', 'name', 'description', 'image'], 'limit': 21}
+2022-06-07 00:07:38,357 - DEBUG: Result: (56, 8, 'tf2', 'tf2', 'image/upload/v1654290733/3c0cc53efa66b1e78c8e2dea41c8b65b_b2e5gp.png')
+2022-06-07 00:07:38,357 - DEBUG: Result: (57, 8, 'mmmmm', 'aaa', 'image/upload/v1654290763/canny_c4jopa.png')
+2022-06-07 00:07:38,358 - DEBUG: Result: (58, 8, 'ogo tf2', 'aa', 'image/upload/v1654290787/3c0cc53efa66b1e78c8e2dea41c8b65b_fup6kl.png')
+2022-06-07 00:07:38,358 - DEBUG: Result: (59, 8, 'asdfsd', 'dfdfdfdfdfdfdfdfdfdf', 'image/upload/v1654355965/3c0cc53efa66b1e78c8e2dea41c8b65b_r6vp3w.png')
+2022-06-07 00:07:38,359 - DEBUG: Result: (60, 8, 'aaaa', 'dasdas', 'image/upload/v1654356055/aXS145dT5yI_vnkcqm.jpg')
+2022-06-07 00:07:38,360 - DEBUG: Result: (61, 8, 'regerg', 'wwww', 'image/upload/v1654356303/6i-U42XoPQg_yqhhyp.jpg')
+2022-06-07 00:07:38,360 - DEBUG: Result: (62, 8, 'onetwoaaaaaa', 'asd', 'image/upload/v1654425845/4_jrzgpa.png')
+2022-06-07 00:07:38,361 - DEBUG: sql_command: SELECT "cocktails_cocktail"."id", "cocktails_cocktail"."author_id", "cocktails_cocktail"."name", "cocktails_cocktail"."description", "cocktails_cocktail"."image" FROM "cocktails_cocktail" LIMIT 21
+params: ()
+2022-06-07 00:07:38,363 - DEBUG: Find query: {'projection': ['id', 'author_id', 'name', 'description', 'image'], 'limit': 21}
+2022-06-07 00:07:38,364 - DEBUG: Result: (56, 8, 'tf2', 'tf2', 'image/upload/v1654290733/3c0cc53efa66b1e78c8e2dea41c8b65b_b2e5gp.png')
+2022-06-07 00:07:38,365 - DEBUG: Result: (57, 8, 'mmmmm', 'aaa', 'image/upload/v1654290763/canny_c4jopa.png')
+2022-06-07 00:07:38,365 - DEBUG: Result: (58, 8, 'ogo tf2', 'aa', 'image/upload/v1654290787/3c0cc53efa66b1e78c8e2dea41c8b65b_fup6kl.png')
+2022-06-07 00:07:38,366 - DEBUG: Result: (59, 8, 'asdfsd', 'dfdfdfdfdfdfdfdfdfdf', 'image/upload/v1654355965/3c0cc53efa66b1e78c8e2dea41c8b65b_r6vp3w.png')
+2022-06-07 00:07:38,366 - DEBUG: Result: (60, 8, 'aaaa', 'dasdas', 'image/upload/v1654356055/aXS145dT5yI_vnkcqm.jpg')
+2022-06-07 00:07:38,366 - DEBUG: Result: (61, 8, 'regerg', 'wwww', 'image/upload/v1654356303/6i-U42XoPQg_yqhhyp.jpg')
+2022-06-07 00:07:38,367 - DEBUG: Result: (62, 8, 'onetwoaaaaaa', 'asd', 'image/upload/v1654425845/4_jrzgpa.png')
+2022-06-07 00:07:38,368 - DEBUG: sql_command: SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > %(0)s AND "django_session"."session_key" = %(1)s) LIMIT 21
+params: (datetime.datetime(2022, 6, 6, 21, 7, 38, 367659), 'mvfvzthj8szyz29frlgu5b3d1bmiqk9g')
+2022-06-07 00:07:38,370 - DEBUG: Find query: {'filter': {'$and': [{'expire_date': {'$gt': datetime.datetime(2022, 6, 6, 21, 7, 38, 367659)}}, {'session_key': {'$eq': 'mvfvzthj8szyz29frlgu5b3d1bmiqk9g'}}]}, 'projection': ['session_key', 'session_data', 'expire_date'], 'limit': 21}
+2022-06-07 00:07:38,372 - DEBUG: Result: ('mvfvzthj8szyz29frlgu5b3d1bmiqk9g', '.eJxVjDsOwjAQBe_iGllrE_8o6XMGy_bu4gBypDipEHeHSCmgfTPzXiKmba1x67TECcVFeHH63XIqD2o7wHtqt1mWua3LlOWuyIN2Oc5Iz-vh_h3U1Ou3ZgdsDZqESrEyCgaNZxeS1mAU0gCWtAdmKsQB0bnAZG1Gn9EZyE68P-L8OEA:1nxOjD:6q1XCUOjjiXwnQCxt3Pd9xah7fxSpIGZDg2yrzPSDJg', datetime.datetime(2022, 6, 18, 8, 1, 47, 10000))
+2022-06-07 00:07:38,373 - DEBUG: sql_command: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %(0)s LIMIT 21
+params: (8,)
+2022-06-07 00:07:38,378 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
+2022-06-07 00:07:38,380 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
+2022-06-07 00:07:38,255 - ERROR: Internal Server Error: /cocktails/Orange juice/
+Traceback (most recent call last):
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\views\generic\base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\mddn\PycharmProjects\project-cocktails-python\projectcocktails\apps\cocktails\views.py", line 97, in get
+    cocktails = asyncio.run(get_receipts_filtered_async(fltr))
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\asyncio\runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 646, in run_until_complete
+    return future.result()
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 435, in __call__
+    ret = await asyncio.wait_for(future, timeout=None)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\asyncio\tasks.py", line 408, in wait_for
+    return await fut
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\asgiref\sync.py", line 476, in thread_handler
+    return func(*args, **kwargs)
+  File "C:\Users\mddn\PycharmProjects\project-cocktails-python\projectcocktails\apps\cocktails\views.py", line 132, in get_receipts_filtered_async
+    receipts = Cocktail.objects.filter(category=fltr)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1071, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1089, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\query.py", line 1096, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\query.py", line 1502, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\query.py", line 1532, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\query.py", line 1377, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg)
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\query.py", line 1187, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\mddn\AppData\Local\Programs\Python\Python310\lib\site-packages\django\db\models\sql\query.py", line 1677, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'category' into field. Choices are: author, author_id, description, id, image, ingredients, name
+2022-06-07 00:07:38,405 - DEBUG: MongoClient connection closed
+2022-06-07 00:10:40,954 - INFO: C:\Users\mddn\PycharmProjects\project-cocktails-python\projectcocktails\apps\cocktails\views.py changed, reloading.
+2022-06-07 00:10:42,018 - INFO: Watching for file changes with StatReloader
+2022-06-07 00:10:42,181 - DEBUG: New MongoClient connection
+2022-06-07 00:10:42,190 - DEBUG: New Database connection
+2022-06-07 00:10:42,203 - DEBUG: sql_command: SELECT "django_migrations"."id", "django_migrations"."app", "django_migrations"."name", "django_migrations"."applied" FROM "django_migrations"
+params: ()
+2022-06-07 00:10:42,205 - DEBUG: Find query: {'projection': ['id', 'app', 'name', 'applied']}
+2022-06-07 00:10:42,207 - DEBUG: Result: (1, 'contenttypes', '0001_initial', datetime.datetime(2022, 5, 17, 10, 39, 37, 797000))
+2022-06-07 00:10:42,207 - DEBUG: Result: (2, 'auth', '0001_initial', datetime.datetime(2022, 5, 17, 10, 39, 38, 201000))
+2022-06-07 00:10:42,208 - DEBUG: Result: (3, 'admin', '0001_initial', datetime.datetime(2022, 5, 17, 10, 39, 38, 289000))
+2022-06-07 00:10:42,208 - DEBUG: Result: (4, 'admin', '0002_logentry_remove_auto_add', datetime.datetime(2022, 5, 17, 10, 39, 38, 308000))
+2022-06-07 00:10:42,209 - DEBUG: Result: (5, 'admin', '0003_logentry_add_action_flag_choices', datetime.datetime(2022, 5, 17, 10, 39, 38, 329000))
+2022-06-07 00:10:42,210 - DEBUG: Result: (6, 'contenttypes', '0002_remove_content_type_name', datetime.datetime(2022, 5, 17, 10, 39, 38, 523000))
+2022-06-07 00:10:42,211 - DEBUG: Result: (7, 'auth', '0002_alter_permission_name_max_length', datetime.datetime(2022, 5, 17, 10, 39, 38, 548000))
+2022-06-07 00:10:42,211 - DEBUG: Result: (8, 'auth', '0003_alter_user_email_max_length', datetime.datetime(2022, 5, 17, 10, 39, 38, 572000))
+2022-06-07 00:10:42,212 - DEBUG: Result: (9, 'auth', '0004_alter_user_username_opts', datetime.datetime(2022, 5, 17, 10, 39, 38, 595000))
+2022-06-07 00:10:42,213 - DEBUG: Result: (10, 'auth', '0005_alter_user_last_login_null', datetime.datetime(2022, 5, 17, 10, 39, 38, 613000))
+2022-06-07 00:10:42,213 - DEBUG: Result: (11, 'auth', '0006_require_contenttypes_0002', datetime.datetime(2022, 5, 17, 10, 39, 38, 623000))
+2022-06-07 00:10:42,214 - DEBUG: Result: (12, 'auth', '0007_alter_validators_add_error_messages', datetime.datetime(2022, 5, 17, 10, 39, 38, 644000))
+2022-06-07 00:10:42,214 - DEBUG: Result: (13, 'auth', '0008_alter_user_username_max_length', datetime.datetime(2022, 5, 17, 10, 39, 38, 666000))
+2022-06-07 00:10:42,215 - DEBUG: Result: (14, 'auth', '0009_alter_user_last_name_max_length', datetime.datetime(2022, 5, 17, 10, 39, 38, 692000))
+2022-06-07 00:10:42,216 - DEBUG: Result: (15, 'auth', '0010_alter_group_name_max_length', datetime.datetime(2022, 5, 17, 10, 39, 38, 718000))
+2022-06-07 00:10:42,216 - DEBUG: Result: (16, 'auth', '0011_update_proxy_permissions', datetime.datetime(2022, 5, 17, 10, 39, 38, 742000))
+2022-06-07 00:10:42,217 - DEBUG: Result: (17, 'auth', '0012_alter_user_first_name_max_length', datetime.datetime(2022, 5, 17, 10, 39, 38, 762000))
+2022-06-07 00:10:42,218 - DEBUG: Result: (18, 'cocktails', '0001_initial', datetime.datetime(2022, 5, 17, 10, 39, 38, 853000))
+2022-06-07 00:10:42,218 - DEBUG: Result: (19, 'sessions', '0001_initial', datetime.datetime(2022, 5, 17, 10, 39, 38, 903000))
+2022-06-07 00:10:42,219 - DEBUG: Result: (20, 'cocktails', '0002_remove_ingredient_description_ingredient_category_and_more', datetime.datetime(2022, 5, 18, 20, 14, 7, 805000))
+2022-06-07 00:10:42,220 - DEBUG: Result: (21, 'cocktails', '0003_delete_ingredient', datetime.datetime(2022, 5, 27, 21, 48, 55, 974000))
+2022-06-07 00:10:42,220 - DEBUG: Result: (22, 'ingredients', '0001_initial', datetime.datetime(2022, 5, 27, 21, 48, 56, 19000))
+2022-06-07 00:10:42,221 - DEBUG: Result: (23, 'ingredients', '0002_remove_ingredient_cocktail', datetime.datetime(2022, 5, 27, 21, 48, 56, 27000))
+2022-06-07 00:10:42,222 - DEBUG: Result: (24, 'cocktails', '0004_cocktail_image_cocktail_ingredients', datetime.datetime(2022, 5, 27, 21, 48, 56, 82000))
+2022-06-07 00:10:42,222 - DEBUG: Result: (25, 'ingredients', '0003_alter_ingredient_id', datetime.datetime(2022, 5, 27, 21, 48, 56, 88000))
+2022-06-07 00:10:42,223 - DEBUG: Result: (26, 'ingredients', '0002_alter_ingredient_id', datetime.datetime(2022, 5, 27, 22, 37, 26, 115000))
+2022-06-07 00:10:42,224 - DEBUG: Result: (27, 'cocktails', '0002_remove_cocktail_published_cocktail_author', datetime.datetime(2022, 5, 29, 11, 14, 2, 649000))
+2022-06-07 00:10:42,224 - DEBUG: Result: (28, 'cocktails', '0003_alter_cocktail_author', datetime.datetime(2022, 5, 29, 11, 28, 24, 555000))
+2022-06-07 00:10:42,225 - DEBUG: Result: (29, 'cocktails', '0004_alter_cocktail_image', datetime.datetime(2022, 5, 29, 12, 45, 58, 181000))
+2022-06-07 00:10:42,226 - DEBUG: Result: (30, 'cocktails', '0005_alter_cocktail_description', datetime.datetime(2022, 5, 29, 13, 9, 34, 801000))
+2022-06-07 00:10:42,227 - DEBUG: Result: (31, 'cauth', '0001_initial', datetime.datetime(2022, 5, 29, 19, 34, 13, 510000))
+2022-06-07 00:10:42,227 - DEBUG: Result: (32, 'cocktails', '0006_alter_cocktail_image', datetime.datetime(2022, 6, 3, 21, 7, 25, 23000))
+2022-06-07 00:10:42,949 - DEBUG: Using proactor: IocpProactor
+2022-06-07 00:10:42,958 - DEBUG: New Database connection
+2022-06-07 00:10:42,958 - DEBUG: sql_command: SELECT "django_session"."session_key", "django_session"."session_data", "django_session"."expire_date" FROM "django_session" WHERE ("django_session"."expire_date" > %(0)s AND "django_session"."session_key" = %(1)s) LIMIT 21
+params: (datetime.datetime(2022, 6, 6, 21, 10, 42, 957344), 'mvfvzthj8szyz29frlgu5b3d1bmiqk9g')
+2022-06-07 00:10:42,961 - DEBUG: Find query: {'filter': {'$and': [{'expire_date': {'$gt': datetime.datetime(2022, 6, 6, 21, 10, 42, 957344)}}, {'session_key': {'$eq': 'mvfvzthj8szyz29frlgu5b3d1bmiqk9g'}}]}, 'projection': ['session_key', 'session_data', 'expire_date'], 'limit': 21}
+2022-06-07 00:10:42,963 - DEBUG: Result: ('mvfvzthj8szyz29frlgu5b3d1bmiqk9g', '.eJxVjDsOwjAQBe_iGllrE_8o6XMGy_bu4gBypDipEHeHSCmgfTPzXiKmba1x67TECcVFeHH63XIqD2o7wHtqt1mWua3LlOWuyIN2Oc5Iz-vh_h3U1Ou3ZgdsDZqESrEyCgaNZxeS1mAU0gCWtAdmKsQB0bnAZG1Gn9EZyE68P-L8OEA:1nxOjD:6q1XCUOjjiXwnQCxt3Pd9xah7fxSpIGZDg2yrzPSDJg', datetime.datetime(2022, 6, 18, 8, 1, 47, 10000))
+2022-06-07 00:10:42,964 - DEBUG: sql_command: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %(0)s LIMIT 21
+params: (8,)
+2022-06-07 00:10:42,967 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
+2022-06-07 00:10:42,968 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
+2022-06-07 00:10:42,969 - DEBUG: sql_command: SELECT "cocktails_cocktail"."id", "cocktails_cocktail"."author_id", "cocktails_cocktail"."name", "cocktails_cocktail"."description", "cocktails_cocktail"."image" FROM "cocktails_cocktail" INNER JOIN "cocktails_cocktail_ingredients" ON ("cocktails_cocktail"."id" = "cocktails_cocktail_ingredients"."cocktail_id") INNER JOIN "ingredients_ingredient" ON ("cocktails_cocktail_ingredients"."ingredient_id" = "ingredients_ingredient"."id") WHERE "ingredients_ingredient"."name" = %(0)s
+params: ('Orange juice',)
+2022-06-07 00:10:42,981 - DEBUG: Aggregation query: [{'$match': {'id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'cocktails_cocktail_ingredients', 'localField': 'id', 'foreignField': 'cocktail_id', 'as': 'cocktails_cocktail_ingredients'}}, {'$unwind': '$cocktails_cocktail_ingredients'}, {'$match': {'cocktails_cocktail_ingredients.ingredient_id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'ingredients_ingredient', 'localField': 'cocktails_cocktail_ingredients.ingredient_id', 'foreignField': 'id', 'as': 'ingredients_ingredient'}}, {'$unwind': '$ingredients_ingredient'}, {'$match': {'ingredients_ingredient.name': {'$eq': 'Orange juice'}}}, {'$project': {'id': True, 'author_id': True, 'name': True, 'description': True, 'image': True}}]
+2022-06-07 00:10:42,981 - DEBUG: Result: (56, 8, 'tf2', 'tf2', 'image/upload/v1654290733/3c0cc53efa66b1e78c8e2dea41c8b65b_b2e5gp.png')
+2022-06-07 00:10:42,982 - DEBUG: Result: (58, 8, 'ogo tf2', 'aa', 'image/upload/v1654290787/3c0cc53efa66b1e78c8e2dea41c8b65b_fup6kl.png')
+2022-06-07 00:10:42,982 - DEBUG: Result: (59, 8, 'asdfsd', 'dfdfdfdfdfdfdfdfdfdf', 'image/upload/v1654355965/3c0cc53efa66b1e78c8e2dea41c8b65b_r6vp3w.png')
+2022-06-07 00:10:42,982 - DEBUG: Result: (60, 8, 'aaaa', 'dasdas', 'image/upload/v1654356055/aXS145dT5yI_vnkcqm.jpg')
+2022-06-07 00:10:42,984 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" INNER JOIN "cocktails_cocktail_ingredients" ON ("ingredients_ingredient"."id" = "cocktails_cocktail_ingredients"."ingredient_id") WHERE "cocktails_cocktail_ingredients"."cocktail_id" = %(0)s
+params: (56,)
+2022-06-07 00:10:42,988 - DEBUG: Aggregation query: [{'$match': {'id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'cocktails_cocktail_ingredients', 'localField': 'id', 'foreignField': 'ingredient_id', 'as': 'cocktails_cocktail_ingredients'}}, {'$unwind': '$cocktails_cocktail_ingredients'}, {'$match': {'cocktails_cocktail_ingredients.cocktail_id': {'$eq': 56}}}, {'$project': {'id': True, 'name': True, 'category': True}}]
+2022-06-07 00:10:42,989 - DEBUG: Result: (UUID('35b71719-727a-4cb6-9e07-bf283f4e7031'), 'Orange juice', 'JCE')
+2022-06-07 00:10:42,989 - DEBUG: Result: (UUID('2f42995b-03a6-43e5-863d-7ab72327ab9a'), 'Milk', 'MLK')
+2022-06-07 00:10:42,990 - DEBUG: sql_command: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %(0)s LIMIT 21
+params: (8,)
+2022-06-07 00:10:42,993 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
+2022-06-07 00:10:42,994 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
+2022-06-07 00:10:42,998 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" INNER JOIN "cocktails_cocktail_ingredients" ON ("ingredients_ingredient"."id" = "cocktails_cocktail_ingredients"."ingredient_id") WHERE "cocktails_cocktail_ingredients"."cocktail_id" = %(0)s
+params: (58,)
+2022-06-07 00:10:43,003 - DEBUG: Aggregation query: [{'$match': {'id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'cocktails_cocktail_ingredients', 'localField': 'id', 'foreignField': 'ingredient_id', 'as': 'cocktails_cocktail_ingredients'}}, {'$unwind': '$cocktails_cocktail_ingredients'}, {'$match': {'cocktails_cocktail_ingredients.cocktail_id': {'$eq': 58}}}, {'$project': {'id': True, 'name': True, 'category': True}}]
+2022-06-07 00:10:43,003 - DEBUG: Result: (UUID('35b71719-727a-4cb6-9e07-bf283f4e7031'), 'Orange juice', 'JCE')
+2022-06-07 00:10:43,005 - DEBUG: sql_command: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %(0)s LIMIT 21
+params: (8,)
+2022-06-07 00:10:43,007 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
+2022-06-07 00:10:43,009 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
+2022-06-07 00:10:43,011 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" INNER JOIN "cocktails_cocktail_ingredients" ON ("ingredients_ingredient"."id" = "cocktails_cocktail_ingredients"."ingredient_id") WHERE "cocktails_cocktail_ingredients"."cocktail_id" = %(0)s
+params: (59,)
+2022-06-07 00:10:43,014 - DEBUG: Aggregation query: [{'$match': {'id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'cocktails_cocktail_ingredients', 'localField': 'id', 'foreignField': 'ingredient_id', 'as': 'cocktails_cocktail_ingredients'}}, {'$unwind': '$cocktails_cocktail_ingredients'}, {'$match': {'cocktails_cocktail_ingredients.cocktail_id': {'$eq': 59}}}, {'$project': {'id': True, 'name': True, 'category': True}}]
+2022-06-07 00:10:43,015 - DEBUG: Result: (UUID('35b71719-727a-4cb6-9e07-bf283f4e7031'), 'Orange juice', 'JCE')
+2022-06-07 00:10:43,015 - DEBUG: sql_command: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %(0)s LIMIT 21
+params: (8,)
+2022-06-07 00:10:43,018 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
+2022-06-07 00:10:43,020 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
+2022-06-07 00:10:43,021 - DEBUG: sql_command: SELECT "ingredients_ingredient"."id", "ingredients_ingredient"."name", "ingredients_ingredient"."category" FROM "ingredients_ingredient" INNER JOIN "cocktails_cocktail_ingredients" ON ("ingredients_ingredient"."id" = "cocktails_cocktail_ingredients"."ingredient_id") WHERE "cocktails_cocktail_ingredients"."cocktail_id" = %(0)s
+params: (60,)
+2022-06-07 00:10:43,025 - DEBUG: Aggregation query: [{'$match': {'id': {'$ne': None, '$exists': True}}}, {'$lookup': {'from': 'cocktails_cocktail_ingredients', 'localField': 'id', 'foreignField': 'ingredient_id', 'as': 'cocktails_cocktail_ingredients'}}, {'$unwind': '$cocktails_cocktail_ingredients'}, {'$match': {'cocktails_cocktail_ingredients.cocktail_id': {'$eq': 60}}}, {'$project': {'id': True, 'name': True, 'category': True}}]
+2022-06-07 00:10:43,025 - DEBUG: Result: (UUID('35b71719-727a-4cb6-9e07-bf283f4e7031'), 'Orange juice', 'JCE')
+2022-06-07 00:10:43,026 - DEBUG: sql_command: SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = %(0)s LIMIT 21
+params: (8,)
+2022-06-07 00:10:43,030 - DEBUG: Find query: {'filter': {'id': {'$eq': 8}}, 'projection': ['id', 'password', 'last_login', 'is_superuser', 'username', 'first_name', 'last_name', 'email', 'is_staff', 'is_active', 'date_joined'], 'limit': 21}
+2022-06-07 00:10:43,032 - DEBUG: Result: (8, 'pbkdf2_sha256$320000$YEgerKVuI0wV3ob9IMebTf$TKS50+npoGwQoqpM6qdSEBZTKdxH/5kVk7GCg7PWIMA=', datetime.datetime(2022, 6, 4, 8, 1, 47, 8000), False, 'medadon41', '', '', '', False, True, datetime.datetime(2022, 5, 29, 20, 46, 57, 107000))
+2022-06-07 00:10:43,034 - DEBUG: MongoClient connection closed
+2022-06-07 00:10:43,242 - WARNING: Not Found: /favicon.ico

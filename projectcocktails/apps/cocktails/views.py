@@ -129,7 +129,7 @@ def get_receipts_async():
 
 @sync_to_async
 def get_receipts_filtered_async(fltr):
-    receipts = Cocktail.objects.filter(category=fltr)
+    receipts = Cocktail.objects.filter(ingredients__name=fltr)
     return receipts
 
 

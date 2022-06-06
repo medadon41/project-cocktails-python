@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 import datetime
 from pathlib import Path
 import os
+import dj_database_url
 import environ
 import cloudinary
 import cloudinary.uploader
@@ -87,21 +88,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'projectcocktails.wsgi.application'
 
 CSRF_COOKIE_SECURE = False
-
+CSRF_TRUSTED_ORIGINS = ['https://projectcocktails.herokuapp.com']
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+DATABASE_URL = 'postgresql://<postgresql>'
+DATABASES = {'default': dj_database_url.config('DATABASE_URL')}
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME': env('DB_NAME'),
-        'CLIENT': {
-                'host': 'localhost',
-                'port': 27017,
-                'authSource': 'project_db',
-            },
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': env('DB_NAME'),
+#         'CLIENT': {
+#                 'host': 'localhost',
+#                 'port': 27017,
+#                 'authSource': 'project_db',
+#             },
+#     }
+# }
 
 
 # Password validation
